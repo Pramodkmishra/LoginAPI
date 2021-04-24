@@ -4,6 +4,7 @@ id:String
 firstName:String
 lastName:String
 email:String
+phone:String
 city:String
 country:String
 password1:String
@@ -16,6 +17,7 @@ id:String!
 firstName:String!
 lastName:String!
 email:String!
+phone:String!
 city:String!
 country:String!
 password1:String!
@@ -31,7 +33,7 @@ findAllCustomers:[Customer]!
 
 type Mutation
 {
-createCustomer(id:String!,firstName:String!,lastName:String!,email:String!,city:String!,country:String!,password1:String!,password2:String!):Customer!
+createCustomer(id:String!,firstName:String!,lastName:String!,email:String!,phone:String!,city:String!,country:String!,password1:String!,password2:String!):Customer!
 makeCustomer(input:CustomerInput):Customer!
 }
 

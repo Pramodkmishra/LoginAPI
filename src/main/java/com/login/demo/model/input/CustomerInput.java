@@ -5,6 +5,7 @@ public class CustomerInput {
 	private String firstName;
 	private String lastName;
 	private String email;
+	private String phone;
 	private String city;
 	private String country;
 	private String password1;
@@ -57,17 +58,24 @@ public class CustomerInput {
 	public void setPassword2(String password2) {
 		this.password2 = password2;
 	}
-	public CustomerInput(String id, String firstName, String lastName, String email, String city, String country,
+	public CustomerInput(String id, String firstName, String lastName, String email,String phone, String city, String country,
 			String password1, String password2) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
+		this.phone=phone;
 		this.city = city;
 		this.country = country;
 		this.password1 = password1;
 		this.password2 = password2;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	public CustomerInput()
 	{}

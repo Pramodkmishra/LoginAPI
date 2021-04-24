@@ -12,21 +12,29 @@ public class Customer {
 	String lastName;
 	@Indexed(name="email",unique=true)
 	String email;
+	String phone;
 	String city;
 	String country;
 	String password1;
 	String password2;
-	public Customer(/*String id,*/ String firstName, String lastName, String email, String city, String country,
+	public Customer(/*String id,*/ String firstName, String lastName, String email,String phone, String city, String country,
 			String password1, String password2) {
 		super();
 		//this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
+		this.phone=phone;
 		this.city = city;
 		this.country = country;
 		this.password1 = password1;
 		this.password2 = password2;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	public String getId() {
 		return id;

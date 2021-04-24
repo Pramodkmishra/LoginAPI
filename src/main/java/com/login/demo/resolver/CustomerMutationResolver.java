@@ -14,16 +14,16 @@ import com.login.demo.repository.CustomerRepository;
 public class CustomerMutationResolver  implements GraphQLMutationResolver {
 	@Autowired
 	CustomerRepository custrepo;
-	public Customer createCustomer(String id,String firstName,String lastName,String email,String city,String country,String password1,String password2)
+	public Customer createCustomer(String id,String firstName,String lastName,String email,String phone,String city,String country,String password1,String password2)
 	{
-		Customer customer =new Customer(/*id,*/firstName,lastName,email,city,country,password1,password2);
+		Customer customer =new Customer(/*id,*/firstName,lastName,email,phone,city,country,password1,password2);
 		custrepo.save(customer);
 		return customer;
 	}
 	
 	public Customer makeCustomer(CustomerInput input)
 	{
-		Customer customer =new Customer(/*input.getId(),*/input.getFirstName(),input.getLastName(),input.getEmail(),input.getCity(),input.getCountry(),input.getPassword1(),input.getPassword2());
+		Customer customer =new Customer(/*input.getId(),*/input.getFirstName(),input.getLastName(),input.getEmail(),input.getPhone(),input.getCity(),input.getCountry(),input.getPassword1(),input.getPassword2());
 		custrepo.save(customer);
 		return customer;
 	}
