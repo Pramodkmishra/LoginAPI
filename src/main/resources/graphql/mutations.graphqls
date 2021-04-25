@@ -1,9 +1,0 @@
-input CustomerInput
-{
-firstName:String!
-lastName:String!
-}
-type mutation
-{
-createCustomer(input:CustomerInput!):Customer
-}

@@ -11,19 +11,20 @@ import com.login.demo.repository.CustomerRepository;
 
 @Component
 public class CustomerResolver implements GraphQLQueryResolver {
-	@Autowired()
+	@Autowired
 	CustomerRepository custrepo;
-	public Optional<Customer> customer(String id) {
+
+	public Optional<Customer> customerFindById(String id) {
 		return custrepo.findById(id);
-	
+
 	}
-	public Optional<Customer> customerFindByEmail(String email)
-	{
+
+	public Optional<Customer> customerFindByEmail(String email) {
 		return custrepo.findByEmail(email);
 	}
-public Iterable<Customer> findAllCustomers()
-{
-	return custrepo.findAll();
+
+	public Iterable<Customer> findAllCustomers() {
+		return custrepo.findAll();
 	}
 
 }
