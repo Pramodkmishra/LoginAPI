@@ -1,0 +1,20 @@
+input ProductInCartInput{
+	productId:String!,
+	quantity:Int
+
+}
+type ProductInCart{
+	productId:String!,
+	quantity:Int
+	
+}
+type  Cart{
+customerId:String!,
+productInCart:[ProductInCart!],
+}
+
+extend type Mutation{
+createCart(customerId:String!,productInput:ProductInCartInput!):Cart!
+removeFromCart(customerId:String!,productId:String!):Cart
+emptyCart(customerId:String!):Cart
+}
