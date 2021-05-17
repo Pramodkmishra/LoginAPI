@@ -1,0 +1,38 @@
+input AddressInput{
+	id:Int,
+	addressLine1:String,
+	addressLine2:String,
+	landmark:String,
+	pincode:String!,
+	city:String!,
+	state:String!,
+	primaryAddress:Boolean
+}
+
+type Address{
+	id:Int,
+	addressLine1:String,
+	addressLine2:String,
+	landmark:String,
+	pincode:String!,
+	city:String!,
+	state:String!,
+	primaryAddress:Boolean
+}
+
+type CustomerAddress{
+id:String!,
+customerId:String!,
+address:[Address!],
+maximumAddressId:Int
+}
+
+extend type Query{
+	findAddressByCustomerId(customerId:String!):CustomerAddress
+	findPrimaryAddress(customerId:String!):Address
+}
+extend type Mutation{
+	addAddress(customerId:String!,addressInput:AddressInput!):CustomerAddress
+	updateAddress(customerId:String!,addressId:Int!,addressInput:AddressInput!):CustomerAddress
+	removeAddress(customerId:String!,addressId:Int!):CustomerAddress
+}
